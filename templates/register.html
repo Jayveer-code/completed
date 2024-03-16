@@ -1,0 +1,58 @@
+{% include "header.html" %}
+
+  <!-- registration area start -->
+  <div class="login-register-area pt-100px pb-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <!-- Remove login tab from registration page -->
+                        <a class="active"  data-bs-toggle="tab" href="#lg2">
+                            <h4>Register</h4>
+                        </a>
+                    </div>
+                    <div class="tab-content">
+                        <div id="lg2" class="tab-pane active">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="{% url 'RegisterPage' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="text" name="first_name" placeholder="First Name" />
+                                        <input type="text" name="last_name" placeholder="Last Name" />
+                                        <input type="text" name="username" placeholder="Username" />
+
+                                        <div class="flex">
+                                            <div class="flex items-center me-4">
+                                                <input type="radio" name="gender" id="male" value="male" required>
+                                                <label for="inline-radio">Male</label>
+                                            </div>
+                                            <div class="flex items-center ">
+                                                <input type="radio" name="gender" id="female" value="female" required>
+                                                <label for="inline-2-radio" >Female</label>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" name="mobile_no" placeholder="Mobile Number" />
+                                        <input name="email" placeholder="Email" type="email" />
+                                        <textarea name="address" placeholder="Address"></textarea>
+                                        <input type="password" name="password" placeholder="Password" />
+                                        <input type="password" name="confirm_password" placeholder="Confirm Password" />
+                                        <div class="button-box">
+                                            <button type="submit"><span>Register</span></button>
+                                            {% if error %}
+                                                 {% include 'auth.html' %}
+                                             {% endif %}
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- login area end -->
+    {% include "footer.html" %}
