@@ -1,0 +1,49 @@
+{% include "header.html" %}
+<div class="login-register-area pt-100px pb-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                        <!-- Remove login tab from registration page -->
+                        <a class="active"  data-bs-toggle="tab" href="#lg3">
+                            <h4>ChangePassword</h4>
+                        </a>
+                    </div>
+                    {% if messages %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+                    <div class="tab-content">
+                        <div id="lg2" class="tab-pane active">
+                            <div class="login-form-container">
+                                <div class="login-register-form">
+                                    <form action="{% url 'LoginPage' %}" method="post">
+                                        {% csrf_token %}
+                                        <div>
+                                            <label for="old_password">Old Password:</label>
+                                            <input type="password" id="old_password" name="old_password" required>
+                                        </div>
+                                        <div>
+                                            <label for="new_password">New Password:</label>
+                                            <input type="password" id="new_password" name="new_password" required>
+                                        </div>
+                                        <div>
+                                            <label for="confirm_password">Confirm Password:</label>
+                                            <input type="password" id="confirm_password" name="confirm_password" required>
+                                        </div>
+                                        <button type="submit">Change Password</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- login area end -->
+
+{% include "footer.html" %}

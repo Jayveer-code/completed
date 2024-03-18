@@ -30,11 +30,12 @@ urlpatterns = [
     path('Myaccount/', views.AccountPage,name="AccountPage"),
     path('Cart/', views.CartPage,name="CartPage"),
     path('Chekout/', views.CheckoutPage,name="ChekoutPage"),
-    path('ChangePass/', views.ForgotPage,name="ChangePass"),
+    path('ChangePass/', views.ChangePass,name="ChangePass"),
     path('Product/', views.PRODUCT,name="Productpage"),
      
-
+    
      path('Register/', views.RegisterPage,name="RegisterPage"),
+     path('logout/', views.logout,name="logout"),
 
     path('Details/<str:id>', views.DetailsPage,name="DetailsPage"),
 ]

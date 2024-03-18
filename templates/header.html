@@ -56,7 +56,11 @@
                                 <ul>
                                     <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +012 3456 789</a></li>
                                     <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> demo@example.com</a></li>
-                                    <li><a href="my-account.html"><i class="fa fa-user"></i> Account</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li><a href="/logout/"><i class="fa fa-user"></i>Logout</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'LoginPage' %}"><i class="fa fa-user"></i>Login</a></li>
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
@@ -84,9 +88,9 @@
                         <div class="col-lg-3 col">
                             <div class="header-actions">
                                 <!-- Single Wedge Start -->
-                                <a href="{% url 'LoginPage' %}" class="header-action-btn">
+                                <!-- <a href="{% url 'LoginPage' %}" class="header-action-btn">
                                     <i class="fa-regular fa-user"></i>
-                                </a>
+                                </a> -->
                                 <!-- Single Wedge End -->
                                 <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>

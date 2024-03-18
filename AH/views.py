@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from store.models import  Product,Categories,Filter_Price,contact_us,UserProfile
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.contrib import auth, messages
 
 
 def Main(request):
@@ -46,8 +47,8 @@ def AboutPage(request):
 def AccountPage(request):
     return render(request,'my-account.html')
 
-def ForgotPage(request):
-    return render(request,'forgot.html')
+def ChangePass(request):
+    return render(request,'ChangePass.html')
 
 def PRODUCT(request):
     # product = Product.objects.filter(status='PUBLISH')
@@ -93,8 +94,9 @@ def RegisterPage(request):
         address = request.POST.get('address')
 
         if password != confirm_password:
-            return render(request, 'auth.html', {'error': 'Passwords do not match'})
-        
+            messages.success(request, "Mismatch Password")
+            # return render(request, 'auth.html', {'error': 'Passwords do not match'})
+
         # Create user
         customer = User.objects.create_user(username=username, email=email, password=password)
         customer.first_name = first_name
@@ -105,11 +107,11 @@ def RegisterPage(request):
         # Replace UserProfile with the actual name of your profile model
         # Create user profile
         user_profile = UserProfile.objects.create(user=customer, gender=gender, mobile_no=mobile_no, address=address)
+        
 
         return redirect('LoginPage')
 
     return render(request,'Register.html')
-
 
 def LoginPage(request):
     if request.method == 'POST':
@@ -128,3 +130,8 @@ def LoginPage(request):
         #     return redirect('HomePage')  # Redirect to the home page if the user is already authenticated
         # else:
             return render(request, 'login.html')
+    
+def logout(request):
+    auth.logout(request)
+    return redirect('/Login/')
+

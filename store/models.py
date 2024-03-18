@@ -72,5 +72,5 @@ class UserProfile(models.Model):
     mobile_no = models.CharField(max_length=15)
     address = models.TextField()   
 
-    def __str__(self):
-        return self.user.username + "'s Profile"
+    class Meta:
+        db_table = 'UserProfile'
