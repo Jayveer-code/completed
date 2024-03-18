@@ -93,7 +93,7 @@
                                     <i class="fa-regular fa-user"></i>
                                 </a> -->
                                 <!-- Single Wedge End -->
-                                <a href="#" class="header-action-btn header-action-btn-cart  ">
+                                <a href="{% url 'cart_detail' %}" class="header-action-btn header-action-btn-cart  ">
                                     <i class="pe-7s-shopbag"></i>
                                     <span class="header-action-num">{{request.session.cart|length}}</span>
                                     <!-- <span class="cart-amount">€30.00</span> -->
@@ -136,7 +136,7 @@
                                     <i class="fa-regular fa-user"></i>
                                 </a> -->
                                 <!-- Single Wedge End -->
-                                <a href="#offcanvas-cart"
+                                <a href="{% url 'cart_detail' %}"
                                     class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
                                     <span class="header-action-num">{{request.session.cart|length}}</span>
@@ -178,17 +178,8 @@
                                                 <li><a href="">Refrigetor</a></li>
                                                 <li><a href="">Microwave Ovens </a>
                                                 </li>
-                                                <li><a href="">Toasters</a>
+                                                <li><a href="{% url 'Productpage' %}?categories=3"> Coffee Makers</a>
                                                 </li>
-                                                <li><a href=""> Coffee Makers</a>
-                                                </li>
-                                                <li><a href=""> Food Processors</a>
-                                                </li>
-                                                <li><a href=""> Electric Kettles</a>
-                                                </li>
-                                                <li><a href="">Dishwashers</a>
-                                                </li>
-
                                             </ul>
                                         </li>
                                         <li class="dropdown position-static"><a href="">Home Comfort Appliances
@@ -196,10 +187,6 @@
                                             <ul class="sub-menu sub-menu-2">
                                                 <li><a href="">Air Conditioners</a></li>
                                                 <li><a href="">Fans</a>
-                                                </li>
-                                                <li><a href="">Heaters</a>
-                                                </li>
-                                                <li><a href="">Humidifiers</a>
                                                 </li>
                                                 <li><a href=""> Air Purifiers</a>
                                                 </li>
@@ -210,20 +197,14 @@
                                                 <i class="fa fa-angle-right"></i></a>
                                             <ul class="sub-menu sub-menu-2">
                                                 <li><a href="">Washing Machines</a></li>
-                                                <li><a href="">Dryers</a>
-                                                </li>
                                                 <li><a href=""> Irons</a>
-                                                </li>
-                                                <li><a href=""> Steamers
-                                                    </a>
-                                                </li>
-
+                                                </li>                               
                                             </ul>
                                         </li>
                                         <li class="dropdown position-static"><a href="">Entertainment Appliances
                                                 <i class="fa fa-angle-right"></i></a>
                                             <ul class="sub-menu sub-menu-2">
-                                                <li><a href=""> Televisions</a></li>
+                                                <li><a href="{% url 'Productpage' %}?categories=2"> Televisions</a></li>
                                                 <li><a href="">Home Theater Systems</a>
                                                 </li>
                                                 <li><a href="">Gaming Consoles</a>
@@ -235,8 +216,8 @@
                                         <li class="dropdown position-static"><a href="">Watches
                                                 <i class="fa fa-angle-right"></i></a>
                                             <ul class="sub-menu sub-menu-2">
-                                                <li><a href=""> Smartwatches</a></li>
-                                                <li><a href=""> Fitness Trackers</a>
+                                                <li><a href="{% url 'DetailsPage' id=2 %}"> Smartwatches</a></li>
+                                                <li><a href="{% url 'Productpage' %}?categories=1"> Fitness Trackers</a>
                                                 </li>
                                                 <li><a href="">Traditional Watches</a>
                                                 </li>
@@ -245,7 +226,7 @@
                                         <li class="dropdown position-static"><a href="">Mobiles & Accessories
                                                 <i class="fa fa-angle-right"></i></a>
                                             <ul class="sub-menu sub-menu-2">
-                                                <li><a href=""> Mobiles</a></li>
+                                                <li><a href="{% url 'Productpage' %}?categories=4"> Mobiles</a></li>
                                                 <li><a href=""> Headphones/Earphones</a>
                                                 </li>
                                                 <li><a href=""> Bluetooth Speakers </a>

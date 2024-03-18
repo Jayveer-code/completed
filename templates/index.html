@@ -82,7 +82,7 @@
                                 <h3 class="title">Smart Watch For <br>
                                 Your Hand</h3>
                                 <span class="category">From $29.00</span>
-                                <a href="shop-left-sidebar.html" class="shop-link"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                <a href="{% url 'Productpage' %}" class="shop-link"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                             <div class="banner-content nth-child-2">
                                 <h3 class="title">Headphones</h3>
                                 <span class="category">From $95.00</span>
-                                <a href="shop-left-sidebar.html" class="shop-link"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                <a href="{% url 'Productpage' %}" class="shop-link"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                         <div class="single-banner nth-child-2">
@@ -100,7 +100,7 @@
                             <div class="banner-content nth-child-3">
                                 <h3 class="title">Smartphone</h3>
                                 <span class="category">From $69.00</span>
-                                <a href="shop-left-sidebar.html" class="shop-link"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                                <a href="{% url 'Productpage' %}" class="shop-link"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                             <!-- 1st tab start -->
                             <div class="tab-pane fade show active" id="newarrivals">
                                 <div class="row mb-n-30px">
-
+                                    <!-- % for prod in product|slice:":2"%   for show limited products-->
                                     {% for prod in product %}
                                     <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
                                         <!-- Single Prodect -->
@@ -167,7 +167,7 @@
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-12 text-center">
                         <h2 class="title"> <span>Smart Fashion</span> With Smart Devices </h2>
-                        <a href="shop-left-sidebar.html" class="btn btn-primary text-capitalize m-auto">Shop All Devices</a>
+                        <a href="{% url 'Productpage' %}" class="btn btn-primary text-capitalize m-auto">Shop All Devices</a>
                     </div>
                 </div>
             </div>
@@ -201,7 +201,7 @@
                                 <div class="deal-timing">
                                     <div data-countdown="2021/09/15"></div>
                                 </div>
-                                <a href="single-product-variable.html" class="btn btn-primary  m-auto"> Shop
+                                <a href="{% url 'Productpage' %}" class="btn btn-primary  m-auto"> Shop
                                     Now </a>
                             </div>
                         </div>
