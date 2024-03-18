@@ -11,17 +11,19 @@
     <meta name="description" content="Hmart-Smart Product eCommerce html Template">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="/static/assets/images/favicon.ico" />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/static/assets/css/font.awesome.css" />
     <link rel="stylesheet" href="/static/assets/css/pe-icon-7-stroke.css" />
     <link rel="stylesheet" href="/static/assets/css/animate.min.css">
     <link rel="stylesheet" href="/static/assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="/static/assets/css/venobox.css">
     <link rel="stylesheet" href="/static/assets/css/jquery-ui.min.css">
-     
-    <link rel="stylesheet" href="/static/assets/css/style.css"> 
+
+    <link rel="stylesheet" href="/static/assets/css/style.css">
     <!-- Minify Version -->
     <link rel="stylesheet" href="/static/assets/css/plugins.min.css">
     <link rel="stylesheet" href="/static/assets/css/style.min.css">
@@ -31,15 +33,12 @@
 </head>
 
 <body>
-<style>
-    input[type="radio"] { 
-    appearance: radio;
-    
-}
+    <style>
+        input[type="radio"] {
+            appearance: radio;
 
-
-
-</style>
+        }
+    </style>
     <div class="main-wrapper">
         <header>
             <!-- Header top area start -->
@@ -55,7 +54,8 @@
                             <div class="top-nav">
                                 <ul>
                                     <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +012 3456 789</a></li>
-                                    <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> demo@example.com</a></li>
+                                    <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i>
+                                            demo@example.com</a></li>
                                     {% if user.is_authenticated %}
                                     <li><a href="/logout/"><i class="fa fa-user"></i>Logout</a></li>
                                     {% else %}
@@ -74,7 +74,8 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-lg-3 col">
                             <div class="header-logo">
-                                <a href="index.html"><img src="/static/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                                <a href="index.html"><img src="/static/assets/images/logo/logo.png"
+                                        alt="Site Logo" /></a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-none d-lg-block">
@@ -92,13 +93,14 @@
                                     <i class="fa-regular fa-user"></i>
                                 </a> -->
                                 <!-- Single Wedge End -->
-                                <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                                <a href="#" class="header-action-btn header-action-btn-cart  ">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="header-action-num">01</span>
+                                    <span class="header-action-num">{{request.session.cart|length}}</span>
                                     <!-- <span class="cart-amount">€30.00</span> -->
                                 </a>
-                                <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
-                                    <i class="pe-7s-menu"></i>
+                                <a href="#offcanvas-mobile-menu"
+                                    class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                                    <i class="pe-7s-menu">hii</i>
                                 </a>
                             </div>
                         </div>
@@ -106,13 +108,17 @@
                 </div>
             </div>
             <!-- Header action area end -->
-            <!-- Header action area start -->
+
+
+
+            <!-- Header action area start For Mobile Reaponsive  Offcanvas Start with line no 369-->
             <div class="header-bottom d-lg-none sticky-nav style-1">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-lg-3 col">
                             <div class="header-logo">
-                                <a href="index.html"><img src="/static/assets/images/logo/logo.png" alt="Site Logo" /></a>
+                                <a href="index.html"><img src="/static/assets/images/logo/logo.png"
+                                        alt="Site Logo" /></a>
                             </div>
                         </div>
                         <div class="col-lg-6 d-none d-lg-block">
@@ -126,16 +132,18 @@
                         <div class="col-lg-3 col">
                             <div class="header-actions">
                                 <!-- Single Wedge Start -->
-                                <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
+                                <!-- <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
                                     <i class="fa-regular fa-user"></i>
-                                </a>
+                                </a> -->
                                 <!-- Single Wedge End -->
-                                <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                                <a href="#offcanvas-cart"
+                                    class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="header-action-num">01</span>
+                                    <span class="header-action-num">{{request.session.cart|length}}</span>
                                     <!-- <span class="cart-amount">€30.00</span> -->
                                 </a>
-                                <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                                <a href="#offcanvas-mobile-menu"
+                                    class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                                     <i class="pe-7s-menu"></i>
                                 </a>
                             </div>
@@ -143,22 +151,24 @@
                     </div>
                 </div>
             </div>
-            <!-- Header action area end -->
+            <!-- Header action area end  Offcanvas Start with line no 369-->
+
+
             <!-- header navigation area start -->
             <div class="header-nav-area d-none d-lg-block sticky-nav">
                 <div class="container">
                     <div class="header-nav">
                         <div class="main-menu position-relative">
                             <ul>
-                                
 
-                                    
-                                        <li><a href="{% url 'HomePage' %}">Home </a></li>
-                                    
+
+
+                                <li><a href="{% url 'HomePage' %}">Home </a></li>
+
                                 </li>
                                 <li><a href="{% url 'AboutPage' %}">About</a></li>
                                 <li class="dropdown position-static"><a href="{% url 'Productpage' %}">Products </a>
-                                 
+
                                 </li>
                                 <li class="dropdown "><a href="#">Categories<i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-menu">
@@ -178,39 +188,39 @@
                                                 </li>
                                                 <li><a href="">Dishwashers</a>
                                                 </li>
-                                                
+
                                             </ul>
                                         </li>
                                         <li class="dropdown position-static"><a href="">Home Comfort Appliances
-                                            <i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu sub-menu-2">
-                                            <li><a href="">Air Conditioners</a></li>
-                                            <li><a href="">Fans</a>
-                                            </li>
-                                            <li><a href="">Heaters</a>
-                                            </li>
-                                            <li><a href="">Humidifiers</a>
-                                            </li>
-                                            <li><a href=""> Air Purifiers</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown position-static"><a href="">Laundry Appliances
-                                        <i class="fa fa-angle-right"></i></a>
-                                    <ul class="sub-menu sub-menu-2">
-                                        <li><a href="">Washing Machines</a></li>
-                                        <li><a href="">Dryers</a>
+                                                <i class="fa fa-angle-right"></i></a>
+                                            <ul class="sub-menu sub-menu-2">
+                                                <li><a href="">Air Conditioners</a></li>
+                                                <li><a href="">Fans</a>
+                                                </li>
+                                                <li><a href="">Heaters</a>
+                                                </li>
+                                                <li><a href="">Humidifiers</a>
+                                                </li>
+                                                <li><a href=""> Air Purifiers</a>
+                                                </li>
+
+                                            </ul>
                                         </li>
-                                        <li><a href=""> Irons</a>
+                                        <li class="dropdown position-static"><a href="">Laundry Appliances
+                                                <i class="fa fa-angle-right"></i></a>
+                                            <ul class="sub-menu sub-menu-2">
+                                                <li><a href="">Washing Machines</a></li>
+                                                <li><a href="">Dryers</a>
+                                                </li>
+                                                <li><a href=""> Irons</a>
+                                                </li>
+                                                <li><a href=""> Steamers
+                                                    </a>
+                                                </li>
+
+                                            </ul>
                                         </li>
-                                        <li><a href="">    Steamers
-                                        </a>
-                                        </li>
-                                        
-                                    </ul>
-                                </li>
-                                            <li class="dropdown position-static"><a href="">Entertainment Appliances
+                                        <li class="dropdown position-static"><a href="">Entertainment Appliances
                                                 <i class="fa fa-angle-right"></i></a>
                                             <ul class="sub-menu sub-menu-2">
                                                 <li><a href=""> Televisions</a></li>
@@ -218,31 +228,31 @@
                                                 </li>
                                                 <li><a href="">Gaming Consoles</a>
                                                 </li>
-                                                
-                                                
+
+
                                             </ul>
                                         </li>
                                         <li class="dropdown position-static"><a href="">Watches
-                                            <i class="fa fa-angle-right"></i></a>
-                                        <ul class="sub-menu sub-menu-2">
-                                            <li><a href=""> Smartwatches</a></li>
-                                            <li><a href=""> Fitness Trackers</a>
-                                            </li>
-                                            <li><a href="">Traditional Watches</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown position-static"><a href="">Mobiles & Accessories
-                                        <i class="fa fa-angle-right"></i></a>
-                                    <ul class="sub-menu sub-menu-2">
-                                        <li><a href=""> Mobiles</a></li>
-                                        <li><a href="">  Headphones/Earphones</a>
+                                                <i class="fa fa-angle-right"></i></a>
+                                            <ul class="sub-menu sub-menu-2">
+                                                <li><a href=""> Smartwatches</a></li>
+                                                <li><a href=""> Fitness Trackers</a>
+                                                </li>
+                                                <li><a href="">Traditional Watches</a>
+                                                </li>
+                                            </ul>
                                         </li>
-                                        <li><a href=""> Bluetooth Speakers   </a>
+                                        <li class="dropdown position-static"><a href="">Mobiles & Accessories
+                                                <i class="fa fa-angle-right"></i></a>
+                                            <ul class="sub-menu sub-menu-2">
+                                                <li><a href=""> Mobiles</a></li>
+                                                <li><a href=""> Headphones/Earphones</a>
+                                                </li>
+                                                <li><a href=""> Bluetooth Speakers </a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
-                                </li>
-                                </ul>
                                 <li><a href="{% url 'ContactPage' %}">Contact</a></li>
                             </ul>
                         </div>
@@ -276,7 +286,8 @@
                 <div class="body customScroll">
                     <ul class="minicart-product-list">
                         <li>
-                            <a href="single-product.html" class="image"><img src="/static/assets/images/product-image/1.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img
+                                    src="/static/assets/images/product-image/1.webp" alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Modern Smart Phone</a>
                                 <span class="quantity-price">1 x <span class="amount">$21.86</span></span>
@@ -284,7 +295,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="single-product.html" class="image"><img src="/static/assets/images/product-image/2.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img
+                                    src="/static/assets/images/product-image/2.webp" alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Bluetooth Headphone</a>
                                 <span class="quantity-price">1 x <span class="amount">$13.28</span></span>
@@ -292,7 +304,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="single-product.html" class="image"><img src="/static/assets/images/product-image/3.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img
+                                    src="/static/assets/images/product-image/3.webp" alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Smart Music Box</a>
                                 <span class="quantity-price">1 x <span class="amount">$17.34</span></span>
@@ -319,7 +332,8 @@
                 <div class="body customScroll">
                     <ul class="minicart-product-list">
                         <li>
-                            <a href="single-product.html" class="image"><img src="/static/assets/images/product-image/1.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img
+                                    src="/static/assets/images/product-image/1.webp" alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Modern Smart Phone</a>
                                 <span class="quantity-price">1 x <span class="amount">$18.86</span></span>
@@ -327,7 +341,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="single-product.html" class="image"><img src="/static/assets/images/product-image/2.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img
+                                    src="/static/assets/images/product-image/2.webp" alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Bluetooth Headphone</a>
                                 <span class="quantity-price">1 x <span class="amount">$43.28</span></span>
@@ -335,7 +350,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="single-product.html" class="image"><img src="/static/assets/images/product-image/3.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img
+                                    src="/static/assets/images/product-image/3.webp" alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Smart Music Box</a>
                                 <span class="quantity-price">1 x <span class="amount">$37.34</span></span>
@@ -353,63 +369,87 @@
             </div>
         </div>
         <!-- OffCanvas Cart End -->
-        <!-- OffCanvas Menu Start -->
+
+
+
+        <!-- OffCanvas Menu Start    For Mobile Responsive -->
         <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
             <button class="offcanvas-close"></button>
             <div class="user-panel">
                 <ul>
                     <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +012 3456 789</a></li>
                     <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> demo@example.com</a></li>
-                    <li><a href="my-account.html"><i class="fa fa-user"></i> Account</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="/logout/"><i class="fa fa-user"></i>Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'LoginPage' %}"><i class="fa fa-user"></i>Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <div class="inner customScroll">
                 <div class="offcanvas-menu mb-4">
                     <ul>
-                        <li><a href="#"><span class="menu-text">Home</span></a>
+                        <li><a href="{% url 'HomePage' %}"><span class="menu-text">Home</span></a></li>
+                        <li><a href="{% url 'AboutPage' %}">About</a></li>
+                        <li class="dropdown">
+                            <a href="{% url 'Productpage' %}">Products</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Categories</a>
                             <ul class="sub-menu">
-                                <li><a href="index.html"><span class="menu-text">Home 1</span></a></li>
-                                <li><a href="index-2.html"><span class="menu-text">Home 2</span></a></li>
+                                <li class="dropdown">
+                                    <a href="#">Kitchen Appliances</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Refrigerators</a></li>
+                                        <li><a href="#">Microwave Ovens</a></li>
+                                        <li><a href="{% url 'Productpage' %}">Coffee Makers</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Home Comfort Appliances</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Air Conditioners</a></li>
+                                        <li><a href="#">Fans</a></li>
+                                        <li><a href="#">Air Purifiers</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Laundry Appliances</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Washing Machines</a></li>
+                                        <li><a href="#">Irons</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Entertainment Appliances</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Televisions</a></li>
+                                        <li><a href="#">Home Theater Systems</a></li>
+                                        <li><a href="#">Gaming Consoles</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Watches</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Smartwatches</a></li>
+                                        <li><a href="#">Fitness Trackers</a></li>
+                                        <li><a href="#">Traditional Watches</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Mobiles & Accessories</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Mobiles</a></li>
+                                        <li><a href="#">Headphones/Earphones</a></li>
+                                        <li><a href="#">Bluetooth Speakers</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <!--   -->
-                        <li><a href="#"><span class="menu-text">Blog</span></a>
-                            <ul class="sub-menu">
-                                <li><a href="blog-grid.html">Blog Grid Page</a></li>
-                                <li><a href="blog-grid-left-sidebar.html">Grid Left Sidebar</a></li>
-                                <li><a href="blog-grid-right-sidebar.html">Grid Right Sidebar</a></li>
-                                <li><a href="blog-list.html">Blog List Page</a></li>
-                                <li><a href="blog-list-left-sidebar.html">List Left Sidebar</a></li>
-                                <li><a href="blog-list-right-sidebar.html">List Right Sidebar</a></li>
-                                <li><a href="blog-single.html">Blog Single Page</a></li>
-                                <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
-                                <li><a href="blog-single-right-sidebar.html">Single Right Sidbar</a>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <!-- OffCanvas Menu End -->
-                <div class="offcanvas-social mt-auto">
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-google"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-youtube"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </li>
+                        <li><a href="{% url 'ContactPage' %}">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <!-- OffCanvas Menu End -->

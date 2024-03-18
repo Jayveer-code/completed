@@ -215,14 +215,16 @@
             <div class="modal-content">
                 <div class="modal-body text-center">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="pe-7s-close"></i></button>
-                    <div class="tt-modal-messages">
+                    <!-- <div class="tt-modal-messages">
                         <i class="pe-7s-check"></i> Added to cart successfully!
-                    </div>
+                    </div> -->
                     <div class="tt-modal-product">
                         <div class="tt-img">
                             <img src="/media/{{cart.image}}" alt="Modern Smart Phone">
                         </div>
-                        <h2 class="tt-title"><a href="#">{{cart.name}}</a></h2>
+                        <h2 class="tt-title"><a href="#">{{cart.name }}</a></h2>
+                        <br>
+                        <a href="{% url 'cart_add' cart.id %}">Add to cart</a>
                     </div>
                 </div>
             </div>

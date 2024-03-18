@@ -4,6 +4,8 @@ from store.models import  Product,Categories,Filter_Price,contact_us,UserProfile
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
+from cart.cart import Cart
 
 
 def Main(request):
@@ -16,8 +18,8 @@ def Main(request):
 
 
 
-def CartPage(request):
-    return render(request,'cart.html')
+def cart_detail(request):
+     return render(request,'cart_details.html')
 
 
 def CheckoutPage(request):
@@ -134,4 +136,49 @@ def LoginPage(request):
 def logout(request):
     auth.logout(request)
     return redirect('/Login/')
+
+# Cart All funcntios
+
+@login_required(login_url="/Login/")
+def cart_add(request, id):
+    cart = Cart(request)
+    product = Product.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("/")
+
+
+@login_required(login_url="/Login/")
+def item_clear(request, id):
+    cart = Cart(request)
+    product = Product.objects.get(id=id)
+    cart.remove(product)
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/Login/")
+def item_increment(request, id):
+    cart = Cart(request)
+    product = Product.objects.get(id=id)
+    cart.add(product=product)
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/Login/")
+def item_decrement(request, id):
+    cart = Cart(request)
+    product = Product.objects.get(id=id)
+    cart.decrement(product=product)
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/Login/")
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect("cart_detail")
+
+
+@login_required(login_url="/Login/")
+def cart_detail(request):
+    return render(request, 'cart_details.html')
 
